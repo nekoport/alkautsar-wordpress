@@ -1,0 +1,19 @@
+#alk_program_date, #alk_event_date {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.post-type-program .wp-list-table .column-thumbnail,
+.post-type-kegiatan .wp-list-table .column-thumbnail {
+    width: 80px;
+}
+
+.post-type-program .wp-list-table .column-thumbnail img,
+.post-type-kegiatan .wp-list-table .column-thumbnail img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
