@@ -1,33 +1,40 @@
 <aside class="widget-area">
-    <div class="sidebar-widget donasi-widget">
-        <h3 class="widget-title">&#x1F49D; <?php _e('Dukung Masjid', 'alkautsar'); ?></h3>
-        <div class="donasi-info">
-            <p class="donasi-label"><?php _e('Salurkan Donasi Via', 'alkautsar'); ?></p>
-            <p class="donasi-bank">&#x1F3E6; <?php echo esc_html(get_theme_mod('alk_bank_name', 'Bank Muamalat')); ?></p>
-            <p class="donasi-rekening"><?php echo esc_html(get_theme_mod('alk_rekening', '010 235 692 (147)')); ?></p>
-            <p class="donasi-atas-nama">a.n. <?php echo esc_html(get_theme_mod('alk_atas_nama', 'Masjid Al-Kautsar')); ?></p>
+    <div class="sidebar-widget donasi-widget-premium">
+        <div class="donasi-widget-header">
+            <div class="donasi-widget-icon">&#x1F932;</div>
+            <h3><?php _e('Dukung Masjid', 'alkautsar'); ?></h3>
+            <p><?php _e('Setiap donasi Anda adalah amal jariyah yang mengalir pahalanya', 'alkautsar'); ?></p>
+        </div>
 
-            <div class="donasi-qris">
-                <p class="qris-label">— <?php _e('atau scan QRIS', 'alkautsar'); ?> —</p>
-                <?php $qris = get_theme_mod('alk_qris_image', ''); ?>
-                <?php if ($qris): ?>
-                <div class="qris-image-wrapper">
-                    <img src="<?php echo esc_url($qris); ?>" alt="QRIS Masjid Al-Kautsar" class="qris-image">
-                    <p class="qris-caption">
-                        <?php _e('Scan untuk donasi via QRIS', 'alkautsar'); ?><br>
-                        <small><?php _e('Berlaku untuk semua aplikasi pembayaran', 'alkautsar'); ?></small>
-                    </p>
-                </div>
-                <?php else: ?>
-                <div class="qris-placeholder">
-                    <span>&#x1F4F1;</span>
-                    <p><?php _e('QRIS tersedia', 'alkautsar'); ?></p>
-                    <small><?php _e('Upload via Appearance &rarr; Customize &rarr; Informasi Donasi', 'alkautsar'); ?></small>
-                </div>
-                <?php endif; ?>
+        <div class="donasi-rekening-premium">
+            <div class="donasi-label-kecil"><?php _e('Salurkan Donasi Via', 'alkautsar'); ?></div>
+            <?php
+            $bank = get_theme_mod('alk_bank_name') ?: 'Bank Muamalat';
+            $rek  = get_theme_mod('alk_rekening') ?: '3010 235 692 (147)';
+            $an   = get_theme_mod('alk_atas_nama') ?: 'Masjid Al-Kautsar Green Jagakarsa';
+            ?>
+            <div class="donasi-bank-row">
+                <span class="donasi-bank-icon">&#x1F3E6;</span>
+                <span class="donasi-bank-text"><?php echo esc_html($bank); ?></span>
             </div>
+            <div class="donasi-rek-number"><?php echo esc_html($rek); ?></div>
+            <div class="donasi-rek-an">a.n. <?php echo esc_html($an); ?></div>
+        </div>
 
-            <a href="<?php echo esc_url(home_url('/donasi')); ?>" class="btn-donasi-sidebar">&#x1F49D; <?php _e('Donasi Sekarang', 'alkautsar'); ?></a>
+        <?php $qris = get_theme_mod('alk_qris_image', ''); ?>
+        <?php if ($qris): ?>
+        <div class="donasi-qris-premium">
+            <div class="qris-divider-text">— <?php _e('atau scan QRIS', 'alkautsar'); ?> —</div>
+            <img src="<?php echo esc_url($qris); ?>" alt="QRIS Masjid Al-Kautsar" class="qris-img-premium">
+            <p class="qris-note"><?php _e('Berlaku untuk semua aplikasi pembayaran', 'alkautsar'); ?></p>
+        </div>
+        <?php endif; ?>
+
+        <a href="<?php echo esc_url(home_url('/donasi')); ?>" class="btn-donasi-premium">&#x1F49D; <?php _e('Donasi Sekarang', 'alkautsar'); ?></a>
+
+        <div class="donasi-footer-note">
+            <span>&#x1F512;</span>
+            <small>Donasi tercatat &amp; transparan</small>
         </div>
     </div>
 

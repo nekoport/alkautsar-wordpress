@@ -3,7 +3,7 @@
  * Al-Kautsar Theme Functions
  */
 
-define('ALK_VERSION', '1.0.0');
+define('ALK_VERSION', '1.0.1');
 
 if (!defined('ALK_THEME_DIR')) {
     define('ALK_THEME_DIR', get_template_directory());
