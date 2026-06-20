@@ -25,5 +25,6 @@ add_filter('theme_page_templates', function($templates) {
     $templates['donasi.php']        = 'Halaman Donasi';
     $templates['transparansi.php']  = 'Transparansi';
     $templates['profil.php']        = 'Profil';
+    $templates['kontak.php']        = 'Kontak';
     return $templates;
 });

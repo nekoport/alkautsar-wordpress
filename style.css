@@ -3713,3 +3713,368 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   margin: 0;
 }
+
+/* === Donasi Page === */
+.donasi-wrap, .kontak-wrap { padding: 2rem 0 4rem; }
+
+.donasi-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .donasi-layout { grid-template-columns: 1fr; }
+}
+
+.donasi-bank-card, .donasi-qris-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.donasi-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.donasi-card-icon { font-size: 1.75rem; }
+
+.donasi-card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  margin: 0;
+}
+
+.bank-detail { margin-bottom: 1.25rem; }
+
+.bank-name-row, .bank-an-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.bank-label {
+  font-size: 0.8rem;
+  color: var(--color-silver-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bank-value {
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+}
+
+.rekening-display {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.rek-label {
+  font-size: 0.8rem;
+  color: var(--color-silver-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.rek-number-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #faf6e8;
+  border: 2px solid var(--color-gold);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+#rek-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.copy-btn {
+  background: var(--color-gold);
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover { background: #c9a227; }
+
+.donasi-note {
+  background: #f9f6ee;
+  border-radius: 10px;
+  padding: 1rem;
+  border-left: 3px solid var(--color-gold);
+}
+
+.donasi-note p {
+  font-size: 0.85rem;
+  color: var(--color-silver-medium);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.btn-wa {
+  display: inline-block;
+  background: #25D366;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.qris-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qris-display img {
+  border-radius: 12px;
+  border: 3px solid var(--color-gold);
+  padding: 8px;
+  background: #ffffff;
+}
+
+.qris-info {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-silver-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.jenis-donasi-section {
+  margin-bottom: 1.5rem;
+}
+
+.jenis-donasi-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  margin-bottom: 1rem;
+}
+
+.jenis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .jenis-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.jenis-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  border: 1px solid rgba(212,175,55,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: all 0.2s;
+}
+
+.jenis-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+.jenis-card span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+.jenis-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem;
+}
+
+.jenis-card p {
+  font-size: 0.8rem;
+  color: var(--color-silver-medium);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.transparansi-cta {
+  background: linear-gradient(135deg, #faf6e8 0%, #f5edcc 100%);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(212,175,55,0.2);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.transparansi-cta p {
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.btn-transparansi {
+  color: var(--color-gold);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* === Kontak Page === */
+.kontak-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .kontak-layout { grid-template-columns: 1fr; }
+}
+
+.kontak-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--color-gold);
+}
+
+.kontak-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem;
+}
+
+.kontak-card p {
+  color: var(--color-silver-medium);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.kontak-items { margin-bottom: 1rem; }
+
+.kontak-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.875rem;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.kontak-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+.kontak-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-silver-medium);
+  margin-bottom: 0.2rem;
+}
+
+.kontak-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  text-decoration: none;
+}
+
+a.kontak-value:hover { color: var(--color-gold); }
+
+.sosmed-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0.75rem;
+}
+
+.sosmed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.sosmed-btn {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+  color: #ffffff;
+}
+
+.sosmed-btn.fb { background: #1877f2; }
+
+.sosmed-btn.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.sosmed-btn.yt { background: #ff0000; }
+
+.sosmed-btn.wa { background: #25D366; }
+
+.sosmed-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+.kontak-maps-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  margin-bottom: 1rem;
+}
+
+.maps-embed {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-maps {
+  display: inline-block;
+  background: var(--color-gold);
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.btn-maps:hover { background: #c9a227; }
