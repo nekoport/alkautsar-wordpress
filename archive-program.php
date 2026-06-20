@@ -23,35 +23,54 @@
             <?php endif; ?>
 
             <?php if (have_posts()) : ?>
-                <div class="gallery-grid">
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php
-                        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        if (!$img_url) $img_url = ALK_THEME_URI . '/assets/images/placeholder.svg';
-                        ?>
-                        <div class="gallery-item" onclick="openLightbox('<?php echo esc_url($img_url); ?>')">
-                            <img src="<?php echo esc_url($img_url); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
-                            <div class="gallery-item-overlay">
-                                <span><?php the_title(); ?></span>
-                            </div>
+            <div class="program-grid">
+                <?php while (have_posts()) : the_post();
+                    $schedule = get_field('program_schedule');
+                    $status   = get_field('program_status');
+                    $status_label = ($status === 'aktif') ? __('Aktif', 'alkautsar') : __('Nonaktif', 'alkautsar');
+                    $status_class = ($status === 'aktif') ? 'status-aktif' : 'status-nonaktif';
+                ?>
+                <article class="program-card">
+                    <?php if (has_post_thumbnail()): ?>
+                    <div class="program-thumb">
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium_large'); ?></a>
+                        <span class="program-status-badge <?php echo $status_class; ?>"><?php echo $status_label; ?></span>
+                    </div>
+                    <?php else: ?>
+                    <div class="program-thumb no-image">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="program-icon-wrap"><span class="program-emoji">&#x1F54C;</span></div>
+                        </a>
+                        <span class="program-status-badge <?php echo $status_class; ?>"><?php echo $status_label; ?></span>
+                    </div>
+                    <?php endif; ?>
+                    <div class="program-card-body">
+                        <h3 class="program-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <?php if ($schedule): ?>
+                        <div class="program-schedule">
+                            <span>&#x1F550;</span>
+                            <span><?php echo esc_html($schedule); ?></span>
                         </div>
-                    <?php endwhile; ?>
-                </div>
-                <div class="pagination">
-                    <?php echo paginate_links(array('prev_text' => '&laquo;', 'next_text' => '&raquo;')); ?>
-                </div>
+                        <?php endif; ?>
+                        <?php if (has_excerpt()): ?>
+                        <p class="program-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                        <?php endif; ?>
+                        <a href="<?php the_permalink(); ?>" class="program-link"><?php _e('Lihat Detail', 'alkautsar'); ?> &rarr;</a>
+                    </div>
+                </article>
+                <?php endwhile; ?>
+            </div>
+            <div class="pagination">
+                <?php echo paginate_links(array('prev_text' => '&laquo;', 'next_text' => '&raquo;')); ?>
+            </div>
             <?php else : ?>
-                <p style="text-align:center;color:var(--color-text-light);"><?php _e('Belum ada program.', 'alkautsar'); ?></p>
+            <div class="no-program">
+                <span>&#x1F54C;</span>
+                <p><?php _e('Belum ada program yang tersedia.', 'alkautsar'); ?></p>
+            </div>
             <?php endif; ?>
         </main>
     </div>
-</div>
-
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <button class="lightbox-prev" onclick="prevLightbox()">&#8249;</button>
-    <img id="lightboxImg" src="" alt="">
-    <button class="lightbox-next" onclick="nextLightbox()">&#8250;</button>
 </div>
 
 <?php get_footer(); ?>

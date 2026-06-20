@@ -1001,6 +1001,712 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
+/* Program Archive Grid */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 1024px) {
+    .program-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .program-grid { grid-template-columns: 1fr; }
+}
+
+.program-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    border-color: var(--color-gold);
+}
+
+.program-thumb {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.program-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.program-card:hover .program-thumb img {
+    transform: scale(1.05);
+}
+
+.program-thumb.no-image {
+    background: linear-gradient(135deg, #faf6e8 0%, #f0e6c0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid var(--color-gold);
+}
+
+.program-thumb.no-image a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.program-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.program-emoji {
+    font-size: 4rem;
+}
+
+.program-status-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-aktif {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.status-nonaktif {
+    background: #6b7280;
+    color: #ffffff;
+}
+
+.program-card-body {
+    padding: 1.25rem;
+}
+
+.program-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.4;
+}
+
+.program-title a {
+    color: var(--color-charcoal);
+    text-decoration: none;
+}
+
+.program-title a:hover {
+    color: var(--color-gold);
+}
+
+.program-schedule {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.825rem;
+    color: var(--color-silver-medium);
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #f9f6ee;
+    border-radius: 6px;
+    border-left: 3px solid var(--color-gold);
+}
+
+.program-excerpt {
+    font-size: 0.875rem;
+    color: var(--color-silver-medium);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.program-link {
+    color: var(--color-gold);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.program-link:hover {
+    text-decoration: underline;
+}
+
+.no-program {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-silver-medium);
+}
+
+.no-program span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-silver-medium);
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span:last-child {
+    color: var(--color-charcoal);
+}
+
+/* Jadwal Sholat Page */
+.jadwal-sholat-wrap {
+    padding: 2rem 0 4rem;
+}
+
+.page-header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-charcoal);
+    margin-bottom: 0.5rem;
+}
+
+.page-header-section p {
+    color: var(--color-silver-medium);
+    margin-bottom: 1rem;
+}
+
+.header-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--color-gold);
+    margin: 0 auto;
+}
+
+.prayer-today-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(212,175,55,0.15);
+}
+
+.prayer-today-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.prayer-today-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+}
+
+.prayer-today-header p {
+    color: var(--color-silver-medium);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.prayer-location-badge {
+    background: #faf6e8;
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--color-charcoal);
+}
+
+.prayer-today-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .prayer-today-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .prayer-today-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.pt-item {
+    text-align: center;
+    padding: 0.875rem 0.25rem;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s;
+}
+
+.pt-item.pt-next {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(212,175,55,0.3);
+}
+
+.pt-item.pt-passed {
+    opacity: 0.45;
+    background: #f9f9f9;
+}
+
+.pt-name {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-silver-medium);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.pt-item.pt-next .pt-name,
+.pt-item.pt-next .pt-time {
+    color: #ffffff;
+}
+
+.pt-time {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    font-family: 'Playfair Display', serif;
+}
+
+.prayer-next-info {
+    text-align: center;
+    padding: 0.75rem;
+    background: #faf6e8;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: var(--color-charcoal);
+    border: 1px solid rgba(212,175,55,0.2);
+}
+
+.countdown-gold {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.prayer-monthly-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(212,175,55,0.15);
+}
+
+.monthly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.monthly-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.month-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.month-btn {
+    background: var(--color-gold);
+    color: #ffffff;
+    border: none;
+    padding: 0.4rem 0.875rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.month-btn:hover {
+    background: #c9a227;
+}
+
+.month-label {
+    font-weight: 600;
+    color: var(--color-charcoal);
+    min-width: 140px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.monthly-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.prayer-monthly-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.prayer-monthly-table th {
+    background: var(--color-gold);
+    color: #ffffff;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prayer-monthly-table td {
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    color: var(--color-charcoal);
+}
+
+.date-cell {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.date-num {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.date-day {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--color-silver-medium);
+}
+
+.today-row {
+    background: #faf6e8 !important;
+}
+
+.today-row td {
+    font-weight: 600;
+}
+
+.today-badge {
+    background: var(--color-gold);
+    color: #ffffff;
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+.friday-row .date-num {
+    color: var(--color-gold);
+}
+
+.highlight-col {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+.prayer-monthly-table tr:hover td {
+    background: #fdfaf0;
+}
+
+.loading-cell {
+    padding: 2rem;
+    color: var(--color-silver-medium);
+    font-style: italic;
+}
+
+.error-msg {
+    color: #ef4444;
+}
+
+/* Single Program */
+.program-single-wrap {
+    padding: 2rem 0 4rem;
+}
+
+.program-single-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .program-single-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.program-hero-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.program-hero-placeholder {
+    height: 250px;
+    background: linear-gradient(135deg, #faf6e8 0%, #f0e6c0 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    border: 2px solid rgba(212,175,55,0.2);
+}
+
+.program-single-badges {
+    margin-bottom: 1rem;
+}
+
+.program-single-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-charcoal);
+    margin: 0 0 1.5rem;
+    line-height: 1.3;
+}
+
+.program-single-schedule {
+    background: #faf6e8;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-gold);
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.schedule-icon-large {
+    font-size: 2rem;
+}
+
+.schedule-label {
+    font-size: 0.75rem;
+    color: var(--color-silver-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.schedule-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+}
+
+.program-single-content {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.program-single-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-charcoal);
+}
+
+.program-navigation {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-back-program {
+    color: var(--color-gold);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-back-program:hover {
+    text-decoration: underline;
+}
+
+.program-join-card {
+    background: linear-gradient(135deg, #1a0e00 0%, #2d1a00 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(212,175,55,0.3);
+}
+
+.join-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.join-card-header span {
+    font-size: 1.5rem;
+}
+
+.join-card-header h3 {
+    color: var(--color-gold);
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.program-join-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.btn-join {
+    display: block;
+    background: var(--color-gold);
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-join:hover {
+    background: #c9a227;
+}
+
+.program-info-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.program-info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-gold);
+}
+
+.program-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.program-info-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.program-info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-icon {
+    font-size: 1.25rem;
+}
+
+.program-info-list small {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--color-silver-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.program-info-list strong {
+    font-size: 0.875rem;
+    color: var(--color-charcoal);
+}
+
+.program-donasi-mini {
+    background: #faf6e8;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    border: 1px solid rgba(212,175,55,0.2);
+}
+
+.program-donasi-mini p {
+    font-size: 0.875rem;
+    color: var(--color-silver-medium);
+    margin-bottom: 0.75rem;
+}
+
+.btn-donasi-mini {
+    display: block;
+    background: var(--color-gold);
+    color: #ffffff;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.btn-donasi-mini:hover {
+    background: #c9a227;
+}
+
 /* Lightbox */
 .lightbox {
     position: fixed;

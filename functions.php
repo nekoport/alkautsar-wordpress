@@ -18,3 +18,10 @@ require_once ALK_THEME_DIR . '/inc/enqueue.php';
 require_once ALK_THEME_DIR . '/inc/custom-post-types.php';
 require_once ALK_THEME_DIR . '/inc/helpers.php';
 require_once ALK_THEME_DIR . '/inc/acf-fields.php';
+
+// Register custom page templates manually
+add_filter('theme_page_templates', function($templates) {
+    $templates['jadwal-sholat.php'] = 'Jadwal Sholat';
+    $templates['donasi.php']        = 'Halaman Donasi';
+    return $templates;
+});
