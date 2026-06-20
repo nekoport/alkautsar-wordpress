@@ -24,5 +24,6 @@ add_filter('theme_page_templates', function($templates) {
     $templates['jadwal-sholat.php'] = 'Jadwal Sholat';
     $templates['donasi.php']        = 'Halaman Donasi';
     $templates['transparansi.php']  = 'Transparansi';
+    $templates['profil.php']        = 'Profil';
     return $templates;
 });
