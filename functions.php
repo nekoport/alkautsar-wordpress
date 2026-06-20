@@ -3,7 +3,7 @@
  * Al-Kautsar Theme Functions
  */
 
-define('ALK_VERSION', '1.0.1');
+define('ALK_VERSION', '1.0.2');
 
 if (!defined('ALK_THEME_DIR')) {
     define('ALK_THEME_DIR', get_template_directory());
@@ -23,5 +23,6 @@ require_once ALK_THEME_DIR . '/inc/acf-fields.php';
 add_filter('theme_page_templates', function($templates) {
     $templates['jadwal-sholat.php'] = 'Jadwal Sholat';
     $templates['donasi.php']        = 'Halaman Donasi';
+    $templates['transparansi.php']  = 'Transparansi';
     return $templates;
 });

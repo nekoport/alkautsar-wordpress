@@ -3228,3 +3228,308 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8rem;
     }
 }
+
+/* === Transparansi Page === */
+.transparansi-wrap { padding: 2rem 0 4rem; }
+
+.akuntabilitas-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #faf6e8 0%, #f5edcc 100%);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(212,175,55,0.2);
+  border-left: 4px solid var(--color-gold);
+}
+
+.akuntabilitas-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+.akuntabilitas-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem;
+}
+
+.akuntabilitas-content p {
+  font-size: 0.9rem;
+  color: var(--color-silver-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.section-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.section-title-left {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.beneficiary-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .beneficiary-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.beneficiary-card {
+  text-align: center;
+  padding: 1.25rem 0.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(212,175,55,0.2);
+  background: #faf6e8;
+  transition: all 0.2s;
+}
+
+.beneficiary-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+.beneficiary-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  background: #ffffff;
+}
+
+.beneficiary-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.beneficiary-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.beneficiary-total {
+  text-align: center;
+  padding: 0.75rem;
+  background: #f9f6ee;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--color-silver-medium);
+}
+
+.beneficiary-total strong { color: var(--color-gold); }
+
+.keuangan-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .keuangan-summary { grid-template-columns: 1fr; }
+}
+
+.keuangan-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+}
+
+.keuangan-card.masuk { 
+  border-color: rgba(16,185,129,0.3); 
+  background: #f0fdf4; 
+}
+
+.keuangan-card.keluar { 
+  border-color: rgba(239,68,68,0.3); 
+  background: #fef2f2; 
+}
+
+.keuangan-card.saldo { 
+  border-color: rgba(212,175,55,0.3); 
+  background: #faf6e8; 
+}
+
+.keuangan-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-silver-medium);
+  margin-bottom: 0.5rem;
+}
+
+.keuangan-card.masuk .keuangan-amount { 
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #10b981;
+  font-family: 'Playfair Display', serif;
+}
+
+.keuangan-card.keluar .keuangan-amount { 
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ef4444;
+  font-family: 'Playfair Display', serif;
+}
+
+.keuangan-card.saldo .keuangan-amount { 
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  font-family: 'Playfair Display', serif;
+}
+
+.transaksi-table-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-charcoal);
+}
+
+.table-responsive { overflow-x: auto; }
+
+.transaksi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 400px;
+}
+
+.transaksi-table th {
+  background: #f9f6ee;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-silver-medium);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.transaksi-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f5f5f5;
+  color: var(--color-charcoal);
+}
+
+.transaksi-table tr:hover td { background: #fdfaf0; }
+
+.tgl-cell { 
+  white-space: nowrap; 
+  color: var(--color-silver-medium);
+  font-size: 0.8rem;
+}
+
+.tipe-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.tipe-badge.masuk { background: #d1fae5; color: #065f46; }
+
+.tipe-badge.keluar { background: #fee2e2; color: #991b1b; }
+
+.jumlah-cell { text-align: right; font-weight: 600; white-space: nowrap; }
+
+.jumlah-cell.masuk { color: #10b981; }
+
+.jumlah-cell.keluar { color: #ef4444; }
+
+.text-right { text-align: right; }
+
+.donasi-info-banner {
+  background: linear-gradient(135deg, #1a0e00 0%, #2d1a00 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(212,175,55,0.3);
+}
+
+@media (max-width: 768px) {
+  .donasi-info-banner { flex-direction: column; text-align: center; }
+}
+
+.donasi-info-content h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-gold);
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.donasi-info-content p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.donasi-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.donasi-info-details span { 
+  color: rgba(255,255,255,0.8); 
+  font-size: 0.875rem;
+}
+
+.donasi-info-details strong { 
+  color: var(--color-gold); 
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.btn-donasi-banner {
+  display: inline-block;
+  background: var(--color-gold);
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-donasi-banner:hover { background: #c9a227; }
+
+.qris-banner-img {
+  width: 160px;
+  height: 160px;
+  max-width: none !important;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 3px solid #D4AF37;
+  padding: 6px;
+  background: #fff;
+  display: block;
+}
+
+.no-data {
+  color: var(--color-silver-medium);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
