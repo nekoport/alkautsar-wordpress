@@ -4147,3 +4147,27 @@ a.kontak-value:hover { color: var(--color-gold); }
         border-radius: 0;
     }
 }
+
+/* Dark Mode — Jadwal Sholat */
+[data-theme="dark"] .today-row {
+  background: rgba(212,175,55,0.15) !important;
+}
+
+[data-theme="dark"] .prayer-monthly-table tr:hover td {
+  background: rgba(212,175,55,0.08);
+}
+
+[data-theme="dark"] .prayer-monthly-table td {
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .month-btn {
+  background: var(--color-card);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .month-label {
+  color: var(--color-text);
+}
