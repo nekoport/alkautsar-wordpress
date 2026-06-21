@@ -4116,3 +4116,34 @@ a.kontak-value:hover { color: var(--color-gold); }
 [data-theme="dark"] .rekening-display {
   border-color: var(--color-border);
 }
+
+/* Fix Mobile — Jadwal Sholat Navigation */
+.month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .month-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .month-nav .month-btn,
+    .month-nav .month-label {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+        white-space: nowrap;
+    }
+
+    .monthly-table-wrap {
+        margin: 0 -0.5rem;
+        border-radius: 0;
+    }
+}
