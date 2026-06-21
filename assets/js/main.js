@@ -214,10 +214,24 @@
             const response = await fetch('https://api.aladhan.com/v1/timingsByCity/' + dateStr + '?city=' + city + '&country=' + country + '&method=2');
             const data = await response.json();
 
-            if (data.code === 200) {
-                window.lastPrayerTimings = data.data.timings;
-                renderPrayerTimes(data.data.timings);
-                updatePrayerDate();
+            if (data.code === 200 &&
+                data.data &&
+                data.data.timings &&
+                typeof data.data.timings === 'object') {
+
+                const timings = data.data.timings;
+                const requiredKeys = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+                const isValid = requiredKeys.every(function(key) {
+                    return timings[key] && typeof timings[key] === 'string';
+                });
+
+                if (isValid) {
+                    window.lastPrayerTimings = timings;
+                    renderPrayerTimes(timings);
+                    updatePrayerDate();
+                } else {
+                    console.warn('Aladhan: struktur timings tidak lengkap');
+                }
             }
         } catch (error) {
             console.log('Gagal memuat jadwal sholat');
