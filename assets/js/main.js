@@ -50,8 +50,15 @@
 
     // Mobile Menu
     window.toggleMenu = function() {
-        const menu = document.querySelector('.main-navigation ul');
+        const menu = document.querySelector('.main-navigation .primary-menu');
+        if (!menu) return;
         menu.classList.toggle('active');
+
+        const toggle = document.querySelector('.menu-toggle');
+        if (toggle) {
+            const isExpanded = menu.classList.contains('active');
+            toggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        }
     };
 
     // Lightbox
