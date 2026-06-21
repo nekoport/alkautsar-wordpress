@@ -66,7 +66,7 @@ get_header(); ?>
             <a href="#" class="sosmed-btn ig">&#x1F4F8; Instagram</a>
             <a href="#" class="sosmed-btn yt">&#x25B6;&#xFE0F; YouTube</a>
             <a href="https://wa.me/6282123232071" 
-               target="_blank" class="sosmed-btn wa">
+               target="_blank" rel="noopener noreferrer" class="sosmed-btn wa">
               &#x1F4AC; WhatsApp
             </a>
           </div>
@@ -88,7 +88,7 @@ get_header(); ?>
           </iframe>
         </div>
         <a href="https://maps.google.com/?q=-6.3646,106.8223" 
-           target="_blank" class="btn-maps">
+           target="_blank" rel="noopener noreferrer" class="btn-maps">
           &#x1F5FA;&#xFE0F; Buka di Google Maps
         </a>
       </div>

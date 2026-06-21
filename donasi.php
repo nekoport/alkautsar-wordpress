@@ -58,8 +58,8 @@ get_header(); ?>
         <div class="donasi-note">
           <p>&#x1F4A1; Setelah transfer, konfirmasi donasi Anda via WhatsApp 
           untuk pencatatan yang akurat.</p>
-          <a href="<?php echo esc_url('https://wa.me/' . get_theme_mod('alk_whatsapp', '6282123232071')); ?>" 
-             target="_blank" class="btn-wa">
+           <a href="<?php echo esc_url('https://wa.me/' . get_theme_mod('alk_whatsapp', '6282123232071')); ?>" 
+              target="_blank" rel="noopener noreferrer" class="btn-wa">
             &#x1F4F1; Konfirmasi via WhatsApp
           </a>
         </div>

@@ -4,3 +4,11 @@ node_modules/
 Thumbs.db
 *.zip
 dummy-data.php
+wp-config.php
+wp-config-sample.php
+.env
+.env.local
+uploads/
+*.sql
+*.tar.gz
+*.bak

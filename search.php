@@ -3,7 +3,7 @@
 <div class="page-header">
     <div class="container">
         <?php alk_breadcrumb(); ?>
-        <h1><?php printf(__('Hasil Pencarian: %s', 'alkautsar'), get_search_query()); ?></h1>
+        <h1><?php printf(__('Hasil Pencarian: %s', 'alkautsar'), esc_html(get_search_query())); ?></h1>
         <p><?php global $wp_query; printf(__('Ditemukan %s hasil', 'alkautsar'), $wp_query->found_posts); ?></p>
     </div>
 </div>

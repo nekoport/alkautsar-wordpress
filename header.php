@@ -80,7 +80,7 @@
         <button class="search-close" onclick="toggleSearch()">&times;</button>
         <div class="search-overlay-inner">
             <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-                <input type="search" placeholder="<?php esc_attr_e('Cari berita, program, atau konten...', 'alkautsar'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                <input type="search" placeholder="<?php esc_attr_e('Cari berita, program, atau konten...', 'alkautsar'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" />
                 <button type="submit"><?php _e('Cari', 'alkautsar'); ?></button>
             </form>
         </div>

@@ -73,7 +73,7 @@ function alk_breadcrumb() {
         single_cat_title('<span>', '</span>');
     } elseif (is_search()) {
         echo ' <span style="margin:0 8px;">/</span> ';
-        echo '<span>' . sprintf(__('Hasil Pencarian: %s', 'alkautsar'), get_search_query()) . '</span>';
+        echo '<span>' . sprintf(__('Hasil Pencarian: %s', 'alkautsar'), esc_html(get_search_query())) . '</span>';
     } elseif (is_archive()) {
         echo ' <span style="margin:0 8px;">/</span> ';
         the_archive_title('<span>', '</span>');

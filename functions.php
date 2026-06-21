@@ -28,3 +28,14 @@ add_filter('theme_page_templates', function($templates) {
     $templates['kontak.php']        = 'Kontak';
     return $templates;
 });
+
+// Security Headers
+add_action('send_headers', function() {
+    if (!is_admin()) {
+        header('X-Frame-Options: SAMEORIGIN');
+        header('X-Content-Type-Options: nosniff');
+        header('X-XSS-Protection: 1; mode=block');
+        header('Referrer-Policy: strict-origin-when-cross-origin');
+        header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
+    }
+});
