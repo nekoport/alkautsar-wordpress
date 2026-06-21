@@ -4268,3 +4268,34 @@ a.kontak-value:hover { color: var(--color-gold); }
         content: "ISY"; font-size: 0.65rem;
     }
 }
+
+/* Mobile — Footer Layout */
+@media (max-width: 768px) {
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col:last-child {
+        text-align: left;
+    }
+
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col:last-child ul {
+        align-items: flex-start;
+    }
+
+    .footer-social,
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-col + .footer-col {
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}
