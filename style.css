@@ -4122,7 +4122,7 @@ a.kontak-value:hover { color: var(--color-gold); }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     padding: 0 0.5rem;
     box-sizing: border-box;
@@ -4170,4 +4170,101 @@ a.kontak-value:hover { color: var(--color-gold); }
 
 [data-theme="dark"] .month-label {
   color: var(--color-text);
+}
+
+/* Mobile — Jadwal Sholat Table Columns */
+@media (max-width: 600px) {
+    .prayer-monthly-table {
+        min-width: unset;
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    .prayer-monthly-table th:nth-child(2),
+    .prayer-monthly-table td:nth-child(2),
+    .prayer-monthly-table th:nth-child(4),
+    .prayer-monthly-table td:nth-child(4) {
+        display: none;
+    }
+
+    .prayer-monthly-table th,
+    .prayer-monthly-table td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.72rem;
+    }
+
+    .date-num { font-size: 0.8rem; }
+    .date-day { font-size: 0.65rem; }
+
+    .month-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .month-btn {
+        flex: 0 0 auto;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+        white-space: nowrap;
+    }
+
+    .month-label {
+        flex: 1;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+}
+
+/* Fix Month Nav Mobile */
+@media (max-width: 600px) {
+    .month-nav {
+        flex-wrap: nowrap !important;
+        gap: 0.25rem;
+        padding: 0 0.25rem;
+    }
+    .month-btn {
+        font-size: 0.72rem !important;
+        padding: 0.35rem 0.5rem !important;
+        white-space: nowrap;
+    }
+    .month-label {
+        font-size: 0.75rem !important;
+        flex: 1;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* Fix Mobile — Jadwal Sholat Header Text */
+@media (max-width: 600px) {
+    .prayer-monthly-table thead th:nth-child(1) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(1)::after {
+        content: 'TGL'; font-size: 0.65rem;
+    }
+    .prayer-monthly-table thead th:nth-child(3) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(3)::after {
+        content: 'SUB'; font-size: 0.65rem;
+    }
+    .prayer-monthly-table thead th:nth-child(5) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(5)::after {
+        content: 'ZHR'; font-size: 0.65rem;
+    }
+    .prayer-monthly-table thead th:nth-child(6) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(6)::after {
+        content: 'ASR'; font-size: 0.65rem;
+    }
+    .prayer-monthly-table thead th:nth-child(7) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(7)::after {
+        content: 'MAG'; font-size: 0.65rem;
+    }
+    .prayer-monthly-table thead th:nth-child(8) { font-size: 0; }
+    .prayer-monthly-table thead th:nth-child(8)::after {
+        content: "ISY"; font-size: 0.65rem;
+    }
 }
