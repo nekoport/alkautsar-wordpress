@@ -4078,3 +4078,41 @@ a.kontak-value:hover { color: var(--color-gold); }
 }
 
 .btn-maps:hover { background: #c9a227; }
+
+/* Dark Mode — Donasi Page */
+[data-theme="dark"] .donasi-bank-card,
+[data-theme="dark"] .donasi-qris-card {
+  background: var(--color-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .rek-number-box {
+  background: #1a1a2e;
+  border-color: var(--color-gold);
+}
+
+[data-theme="dark"] .jenis-card {
+  background: var(--color-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .jenis-card h3 {
+  color: var(--color-white);
+}
+
+[data-theme="dark"] .jenis-card p {
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .transaksi-table tr:hover td {
+  background: rgba(212,175,55,0.08);
+}
+
+[data-theme="dark"] .bank-name-row,
+[data-theme="dark"] .bank-an-row {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .rekening-display {
+  border-color: var(--color-border);
+}
