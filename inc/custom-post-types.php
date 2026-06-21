@@ -107,23 +107,3 @@ function alk_register_cpts() {
     ));
 }
 add_action('init', 'alk_register_cpts');
-
-function alk_add_donasi_page_template() {
-    $templates = array(
-        'pages/template-donasi.php' => __('Halaman Donasi', 'alkautsar'),
-        'pages/template-full-width.php' => __('Full Width', 'alkautsar'),
-    );
-    return $templates;
-}
-add_filter('theme_page_templates', 'alk_add_donasi_page_template');
-
-function alk_load_page_template($template) {
-    if (is_page() && !is_front_page()) {
-        $template_slug = get_page_template_slug();
-        if ($template_slug && file_exists(ALK_THEME_DIR . '/' . $template_slug)) {
-            return ALK_THEME_DIR . '/' . $template_slug;
-        }
-    }
-    return $template;
-}
-add_filter('template_include', 'alk_load_page_template');
