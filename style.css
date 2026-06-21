@@ -4299,3 +4299,79 @@ a.kontak-value:hover { color: var(--color-gold); }
         border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 }
+
+/* Mobile — Transaksi Table */
+@media (max-width: 600px) {
+    .transaksi-table {
+        min-width: unset;
+        font-size: 0.75rem;
+    }
+
+    .transaksi-table th,
+    .transaksi-table td {
+        padding: 0.4rem 0.25rem;
+    }
+
+    .transaksi-table .text-right {
+        white-space: nowrap;
+        min-width: 80px;
+    }
+
+    .transaksi-table th:first-child,
+    .transaksi-table td:first-child {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Kolom jumlah jangan dipotong */
+    .transaksi-table th:last-child,
+    .transaksi-table td:last-child {
+        white-space: nowrap;
+        min-width: 80px;
+        text-align: right;
+    }
+
+    /* Kolom deskripsi lebih sempit agar jumlah muat */
+    .transaksi-table th:nth-child(2),
+    .transaksi-table td:nth-child(2) {
+        max-width: 90px;
+    }
+
+    .tgl-cell {
+        font-size: 0.7rem;
+    }
+
+    .tipe-badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+}
+
+/* Mobile — Transaksi Table: Hide Tanggal Column */
+@media (max-width: 600px) {
+    .transaksi-table th:first-child,
+    .transaksi-table td:first-child {
+        display: none;
+    }
+
+    .transaksi-table th:nth-child(2),
+    .transaksi-table td:nth-child(2) {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile — Hide Donation Banner, Reset Header Height */
+@media (max-width: 768px) {
+    .donation-banner {
+        display: none;
+    }
+
+    :root {
+        --header-height: 80px;
+    }
+}
