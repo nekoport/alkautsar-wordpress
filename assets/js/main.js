@@ -2,10 +2,22 @@
     'use strict';
 
     // Dark Mode
+    function updateDarkModeIcon(isDark) {
+        const darkIcon = document.querySelector('.dark-icon');
+        const lightIcon = document.querySelector('.light-icon');
+        if (darkIcon && lightIcon) {
+            darkIcon.style.display = isDark ? 'none' : '';
+            lightIcon.style.display = isDark ? '' : 'none';
+        }
+    }
+
     function initDarkMode() {
         const saved = localStorage.getItem('alkDarkMode');
         if (saved === 'true') {
             document.documentElement.setAttribute('data-theme', 'dark');
+            updateDarkModeIcon(true);
+        } else {
+            updateDarkModeIcon(false);
         }
     }
 
@@ -15,9 +27,11 @@
         if (isDark) {
             html.removeAttribute('data-theme');
             localStorage.setItem('alkDarkMode', 'false');
+            updateDarkModeIcon(false);
         } else {
             html.setAttribute('data-theme', 'dark');
             localStorage.setItem('alkDarkMode', 'true');
+            updateDarkModeIcon(true);
         }
     };
 
