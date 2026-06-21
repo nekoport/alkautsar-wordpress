@@ -105,8 +105,6 @@ function alk_customize_register($wp_customize) {
         'alk_phone'   => array('label' => __('Telepon', 'alkautsar'), 'type' => 'text', 'default' => '021-12345678'),
         'alk_email'   => array('label' => __('Email', 'alkautsar'), 'type' => 'text', 'default' => 'info@masjid-alkautsar.my.id'),
         'alk_footer_desc' => array('label' => __('Footer Description', 'alkautsar'), 'type' => 'textarea', 'default' => 'Masjid Al-Kautsar Rusunawa Green Jagakarsa. Menjadi pusat ibadah, pendidikan, dan pemberdayaan masyarakat yang islami, modern, dan berkah.'),
-        'alk_bsi_account' => array('label' => __('No. Rek BSI', 'alkautsar'), 'type' => 'text', 'default' => '7112345678'),
-        'alk_mandiri_account' => array('label' => __('No. Rek Mandiri', 'alkautsar'), 'type' => 'text', 'default' => '1234567890'),
     );
 
     foreach ($fields as $key => $field) {
