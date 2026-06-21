@@ -169,6 +169,17 @@ function alk_customize_donasi($wp_customize) {
         'section' => 'alk_donasi',
         'type'    => 'text',
     ));
+
+    $wp_customize->add_setting('alk_whatsapp', array(
+        'default'           => '6282123232071',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('alk_whatsapp', array(
+        'label'       => __('Nomor WhatsApp (format: 628xxx)', 'alkautsar'),
+        'description' => __('Gunakan format internasional tanpa + (contoh: 6282123232071)', 'alkautsar'),
+        'section'     => 'alk_donasi',
+        'type'        => 'text',
+    ));
 }
 add_action('customize_register', 'alk_customize_donasi');
 

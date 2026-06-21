@@ -133,11 +133,36 @@ get_header(); ?>
 <script>
 function copyRekening() {
   const rek = document.getElementById('rek-number').textContent.trim();
-  navigator.clipboard.writeText(rek).then(function() {
-    const btn = document.getElementById('copy-btn');
+  const btn = document.getElementById('copy-btn');
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(rek).then(function() {
+      btn.textContent = '\u2705 Tersalin!';
+      setTimeout(function() { btn.textContent = '\uD83D\uDCCB Salin'; }, 2000);
+    }).catch(function() {
+      fallbackCopy(rek, btn);
+    });
+  } else {
+    fallbackCopy(rek, btn);
+  }
+}
+
+function fallbackCopy(text, btn) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  try {
+    document.execCommand('copy');
     btn.textContent = '\u2705 Tersalin!';
-    setTimeout(function() { btn.textContent = '\uD83D\uDCCB Salin'; }, 2000);
-  });
+  } catch(e) {
+    btn.textContent = '\u274C Gagal';
+  }
+  document.body.removeChild(textarea);
+  setTimeout(function() { btn.textContent = '\uD83D\uDCCB Salin'; }, 2000);
 }
 </script>
 
