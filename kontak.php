@@ -31,9 +31,9 @@ get_header(); ?>
             <span class="kontak-icon">&#x1F4F1;</span>
             <div>
               <div class="kontak-label">WhatsApp / Telepon</div>
-              <a href="tel:<?php echo get_theme_mod('alk_phone', '082123232071'); ?>" 
+              <a href="tel:<?php echo esc_attr(get_theme_mod('alk_phone', '082123232071')); ?>" 
                  class="kontak-value">
-                <?php echo get_theme_mod('alk_phone', '082123232071'); ?>
+                <?php echo esc_html(get_theme_mod('alk_phone', '082123232071')); ?>
               </a>
             </div>
           </div>

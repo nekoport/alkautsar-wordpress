@@ -29,7 +29,7 @@
                     ?>
                     <div class="article-category-banner">
                         <?php foreach ($cats as $cat): ?>
-                        <a href="<?php echo get_category_link($cat->term_id); ?>" class="article-cat-badge"><?php echo $cat->name; ?></a>
+                        <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="article-cat-badge"><?php echo esc_html($cat->name); ?></a>
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
@@ -54,13 +54,13 @@
                             $next = get_next_post();
                             ?>
                             <?php if ($prev) : ?>
-                            <a href="<?php echo get_permalink($prev); ?>" class="post-nav prev">
-                                &larr; <?php echo get_the_title($prev); ?>
+                            <a href="<?php echo esc_url(get_permalink($prev)); ?>" class="post-nav prev">
+                                &larr; <?php echo esc_html(get_the_title($prev)); ?>
                             </a>
                             <?php endif; ?>
                             <?php if ($next) : ?>
-                            <a href="<?php echo get_permalink($next); ?>" class="post-nav next">
-                                <?php echo get_the_title($next); ?> &rarr;
+                            <a href="<?php echo esc_url(get_permalink($next)); ?>" class="post-nav next">
+                                <?php echo esc_html(get_the_title($next)); ?> &rarr;
                             </a>
                             <?php endif; ?>
                         </div>

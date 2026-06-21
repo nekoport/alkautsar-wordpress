@@ -25,7 +25,7 @@
                             <?php endif; ?>
                             <div class="post-card-content">
                                 <div class="post-meta">
-                                    <span class="post-category"><?php $cats = get_the_category(); if ($cats) echo $cats[0]->name; ?></span>
+                                    <span class="post-category"><?php $cats = get_the_category(); if ($cats) echo esc_html($cats[0]->name); ?></span>
                                     <span class="post-date"><?php echo alk_tanggal_indo(); ?></span>
                                 </div>
                                 <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -43,15 +43,15 @@
                     ?>
                     <nav class="pagination">
                         <?php if ($current_page > 1): ?>
-                        <a href="<?php echo get_pagenum_link($current_page - 1); ?>" class="page-btn prev">&larr; <?php _e('Sebelumnya', 'alkautsar'); ?></a>
+                        <a href="<?php echo esc_url(get_pagenum_link($current_page - 1)); ?>" class="page-btn prev">&larr; <?php _e('Sebelumnya', 'alkautsar'); ?></a>
                         <?php endif; ?>
 
                         <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                        <a href="<?php echo get_pagenum_link($i); ?>" class="page-btn <?php echo ($i === $current_page) ? 'active' : ''; ?>"><?php echo $i; ?></a>
+                        <a href="<?php echo esc_url(get_pagenum_link($i)); ?>" class="page-btn <?php echo ($i === $current_page) ? 'active' : ''; ?>"><?php echo absint($i); ?></a>
                         <?php endfor; ?>
 
                         <?php if ($current_page < $total_pages): ?>
-                        <a href="<?php echo get_pagenum_link($current_page + 1); ?>" class="page-btn next"><?php _e('Selanjutnya', 'alkautsar'); ?> &rarr;</a>
+                        <a href="<?php echo esc_url(get_pagenum_link($current_page + 1)); ?>" class="page-btn next"><?php _e('Selanjutnya', 'alkautsar'); ?> &rarr;</a>
                         <?php endif; ?>
                     </nav>
                     <?php endif; ?>

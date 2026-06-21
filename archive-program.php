@@ -17,7 +17,7 @@
                 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;justify-content:center;">
                     <a href="<?php echo get_post_type_archive_link('program'); ?>" class="btn btn-outline btn-sm"><?php _e('Semua', 'alkautsar'); ?></a>
                     <?php foreach ($cats as $cat) : ?>
-                        <a href="<?php echo get_term_link($cat); ?>" class="btn btn-outline btn-sm"><?php echo $cat->name; ?></a>
+                        <a href="<?php echo esc_url(get_term_link($cat)); ?>" class="btn btn-outline btn-sm"><?php echo esc_html($cat->name); ?></a>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
