@@ -43,6 +43,50 @@ Domain Path: /languages
     --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
     --max-width: 1200px;
     --header-height: 80px;
+
+    /* ── Type Scale (Major Third, 1.25×) ── */
+    --text-xs:   0.75rem;    /* 12px — caption, label kecil */
+    --text-sm:   0.875rem;   /* 14px — body small, meta, badge */
+    --text-base: 1rem;       /* 16px — body text */
+    --text-md:   1.25rem;    /* 20px — lead/intro paragraph */
+    --text-lg:   1.5rem;     /* 24px — h3, subheading */
+    --text-xl:   2rem;       /* 32px — h2, section heading */
+    --text-2xl:  2.5rem;     /* 40px — h1, page hero */
+
+    /* ── Line Height ── */
+    --leading-tight:  1.2;   /* heading */
+    --leading-snug:   1.4;   /* subheading */
+    --leading-normal: 1.6;   /* body text */
+    --leading-loose:  1.8;   /* long-form reading */
+
+    /* ── Font Weight ── */
+    --weight-normal:   400;
+    --weight-medium:   500;
+    --weight-semibold: 600;
+    --weight-bold:     700;
+
+    /* ── Spacing Scale (base 4px) ── */
+    --space-1:  0.25rem;   /*  4px */
+    --space-2:  0.5rem;    /*  8px */
+    --space-3:  0.75rem;   /* 12px */
+    --space-4:  1rem;      /* 16px */
+    --space-5:  1.25rem;   /* 20px */
+    --space-6:  1.5rem;    /* 24px */
+    --space-8:  2rem;      /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+
+    /* ── Section Spacing ── */
+    --section-padding: var(--space-20);   /* 80px — desktop */
+    --section-gap:     var(--space-12);   /* 48px — antar section title dan konten */
+
+    /* ── Color Roles (60-30-10) ── */
+    --color-base:      var(--color-bg);           /* 60% — background utama */
+    --color-secondary: var(--color-charcoal);     /* 30% — teks, elemen struktural */
+    --color-accent:    var(--color-gold);         /* 10% — CTA, highlight, dekoratif */
+    --color-accent-bg: rgba(212, 175, 55, 0.08); /* accent ringan untuk bg subtle */
 }
 
 [data-theme="dark"] {
