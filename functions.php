@@ -18,6 +18,8 @@ require_once ALK_THEME_DIR . '/inc/enqueue.php';
 require_once ALK_THEME_DIR . '/inc/custom-post-types.php';
 require_once ALK_THEME_DIR . '/inc/helpers.php';
 require_once ALK_THEME_DIR . '/inc/acf-fields.php';
+require_once ALK_THEME_DIR . '/inc/audit-log.php';
+require_once ALK_THEME_DIR . '/inc/audit-hooks.php';
 
 // Register custom page templates manually
 add_filter('theme_page_templates', function($templates) {
@@ -38,4 +40,19 @@ add_action('send_headers', function() {
         header('Referrer-Policy: strict-origin-when-cross-origin');
         header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
     }
+});
+
+// Audit Log Admin Menu
+add_action('admin_menu', function() {
+    add_menu_page(
+        __('Audit Log', 'alkautsar'),
+        __('Audit Log', 'alkautsar'),
+        'administrator',
+        'alk-audit-log',
+        function() {
+            require_once ALK_THEME_DIR . '/admin/audit-log-page.php';
+        },
+        'dashicons-shield',
+        81
+    );
 });
